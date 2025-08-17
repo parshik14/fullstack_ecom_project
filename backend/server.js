@@ -2,9 +2,17 @@ const express = require("express")
 const helmet = require("helmet")
 const morgan = require("morgan")
 const cors = require("cors")
+const cookieParser = require("cookie-parser")
+const compression = require("compression")
+const mongoSanitize = require("express-mongo-sanitize")
+const hpp = require("hpp")
+const connectDB = require("./src/config/db")
 
 require("dotenv").config();
+
 const app = express()
+
+connectDB()
 
 
 // middlewares
